@@ -35,9 +35,19 @@ public class UserServiceImpl implements UserService {
 //    }
 
     @Override        //true则为不空，false则为空
-    public Boolean userNotnull(String studentID, Long phoneNumber){
-        if (userRepository.findUserByStudentID(studentID)!=null && userRepository.findUserByPhoneNumber(phoneNumber)!=null)
+    public Boolean userNotnull(String studentID){
+        if (userRepository.findUserByStudentID(studentID)!=null)
             return true;
         return false;
+    }
+
+    @Override
+    public Boolean equalsToPwd(String studentID, String pwd){
+        return userRepository.findUserByStudentID(studentID).getPassword().equals(pwd);
+    }
+
+    @Override
+    public User findUserByID(String studentID) {
+        return userRepository.findUserByStudentID(studentID);
     }
 }

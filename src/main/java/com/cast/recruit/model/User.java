@@ -26,9 +26,9 @@ public class User {
     private String studentName;
     @NotNull
     private String studentSex;
-    @NotNull
 //    @Pattern(regexp = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\\\d{8}$")
 //    @Size(min = 11,max = 11)
+    @NotNull
     private Long phoneNumber;
     private String intention_1;
     private String intention_2;

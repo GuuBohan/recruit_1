@@ -11,8 +11,12 @@ public interface UserService {
     User register(User user);
 
     User updateUser(User user);
-//
+
 //    List<User> userList();
 
-    Boolean userNotnull(String studentID, Long phoneNumber);
+    Boolean userNotnull(String studentID);
+
+    Boolean equalsToPwd(String studentID, String pwd);
+
+    User findUserByID(String studentID);
 }

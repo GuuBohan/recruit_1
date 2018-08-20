@@ -6,12 +6,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created By GuuBohan.
- * On 2018/7/23
+ * On 2018/8/19
  */
 @Controller
-@RequestMapping("/*")
-public class IndexController {
+@RequestMapping("/update")
+public class UpdateeController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String index(){ return "index";}
+    public String update(){
+        return "update";
+    }
 }

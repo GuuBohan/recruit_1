@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no" />
+	<!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- 设置苹果工具栏颜色:默认值为 default，可以定为 black和 black-translucent-->
+	<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<meta name="format-detection" content="telphone=no, email=no"/>
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait" />
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait" />
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true" />
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application" />
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app" />
+	<title>通院科协在线报名</title>
+	<link rel="stylesheet" type="text/css" href="../public/css/registerCast.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="sign">		
+					<img src="../public/images/logo.png" id="logo" />
+			</div>
+				<form action="#" method="post" id="user-apply">
+				<div class="studentIDclass">
+					<label for="studentID">学号:</label>
+					<input type="text" name="studentID" id="studentID" placeholder="学号首字母大写" autocomplete="off" required="required"/>
+					<span class="input-error spa1"></span>
+				</div>
+				<div class="studentNameclass">
+					<label for="studentName">姓名:</label>
+					<input type="text" name="studentName" id="studentName" placeholder="敢问阁下尊姓大名?" autocomplete="off" required="required"/>
+					<span class="input-error spa2"></span>
+				</div>
+				<div class="studentSexclass">
+					<label for="studentSex">性别:</label>
+					<input type="radio" checked="checked" id="男" name="studentSex" value="男"/>
+					<label for="男">小哥哥</label>
+					<input type="radio" id="女" name="studentSex" value="女"/>
+					<label for="女">小姐姐</label>
+				</div>
+				<div class="phoneNumberclass">
+					<label for="phoneNumber">手机号码:</label>
+					<input type="text" id="phoneNumber" name="phoneNumber" autocomplete="off" required="required"/>
+					<span class="input-error spa3"></span>
+				</div>
+			
+			<div class="resetPasswordclass">
+					<label for="password">备用密码:</label>
+					<img src="../public/images/visible.png" alt="eyeOfGod" id="eyeOfGod" onclick="hideShowPsw()"/>
+					<input type="password" id="password"   name="password" placeholder="仅用于修改信息时使用" required="required" />
+					<span class="input-error spa4"></span>
+			</div>
+			<br />
+			<hr />
+				<div class="intention_1class">
+					<label for="intention_1">意向部门一:</label>
+					<select name="intention_1" id="intention_1" required="required">
+						<option value=""></option>
+						<option value="计算机部">计算机部</option>
+						<option value="电子部">电子部</option>
+						<option value="多媒体办公中心">多媒体办公中心</option>
+					</select>
+					<span class="select-error spa5"></span>
+				</div>
+				<div class="intention_2class">
+					<label for="intention_2">意向部门二:</label>
+					<select name="intention_2" id="intention_2" required="required">
+						<option value=""></option>
+						<option value="计算机部">计算机部</option>
+						<option value="电子部">电子部</option>
+						<option value="多媒体办公中心">多媒体办公中心</option>
+					</select>
+					<span class="select-error spa6"></span>
+				</div>
+				
+				<div class="sub">
+					<div class="submitclass">
+						<input type="submit" name="submit" id="submit" value="提交" />
+					</div>
+					<div class="resetclass">
+						<input type="reset" name="reset" value="重置" />
+					</div>
+				</div>
+				</form>
+			</div>		
+			<script src="../public/js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../public/js/Kvalidate.js" type="text/javascript" charset="utf-8"></script>
+			<script src="../public/js/registerCast.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

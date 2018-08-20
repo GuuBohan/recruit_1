@@ -1,0 +1,354 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background: url(../images/bg.png) repeat;
+}
+
+.container{
+	position: relative;
+	display: block;
+	width: 100%
+	height: 100%;
+	/*border: 2px solid white;*/
+}
+
+.sign{
+	display: block;
+	position: absolute;
+	top:2px;
+	width: 30%;
+	height: 12rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+#logo{
+	width: 100%;
+	height: 100%;
+}
+
+/*错误提示信息样式*/
+.input-error{
+	display: block;
+	width: 30%;
+	margin-left: 0;
+	font-size: 13px;
+	color:#cd1017;
+	padding-top:.1rem;
+	text-align: right;
+	text-shadow: 1px 1px 1px black;
+}
+.select-error{
+	font-size: 13px;
+	color:#cd1017;
+	padding-left: 1rem;
+	text-shadow: 1px 1px 1px black;
+}
+/*表单基本*/
+
+form{
+	position: absolute;
+	display: block;
+	margin-top: 14rem;
+	background: rgba(130,130,130,0.7);
+	width: 50%;
+	/*height:28rem;*/
+	height: 30rem;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+form div{
+	margin-top: 1.1em;
+	margin-left:.5em;
+}
+label{
+	color: white;
+	font-size: 1.3rem;
+	text-shadow: 1px 1px 1px black;
+}
+/*单选按钮美化部分*/
+input[type="radio"] + label{
+	font-size: 1.2em;
+	color:#F2F2F2;
+	margin-left:3em;
+}
+input[type="radio"] + label::before {
+    content: "\a0"; /*不换行空格*/
+    display: inline-block;
+    vertical-align: middle;
+   	width: 0.6em;
+    height: 0.6em;
+    margin-right: .2em;
+    border-radius: 50%;
+    border: 0.2em solid #ffffff;
+    line-height: 1; 
+}
+input[type="radio"]:checked + label::before {
+    background-color: #262626;
+    box-shadow: 0.8px 0.8px 0.8px black;
+   	background-clip: content-box;
+}
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+/*表单输入框美化*/
+input[type="text"]{
+    margin-bottom: .2em;
+    width: 16em;
+    height:2.3em;
+    border:none;
+    border-bottom: 2px solid #595959;
+    background: rgba(106,106,106,0.5);
+}
+input[type="text"]:focus{
+	outline: none;
+	border-bottom: 2px solid #8389e0;
+}
+input[name^="student"]{
+	margin-left: 4em;
+}
+input[name="phoneNumber"]{
+	margin-left:1em;
+}
+/*下拉框样式修改*/
+select{
+	width:12em;
+	height: 2em;
+	background: rgba(110,110,106,0.9);
+	box-shadow: 1px 1px 1px black;
+	border: 1px solid beige;
+	color: white;
+	border-radius: 4px;
+}
+/*重置密码框美化*/
+img{
+	width: 1.9em;
+	height:1.3em;
+	opacity: 0.8;
+	position: absolute;
+	right:5px;
+	margin:5px;
+}
+input[type="password"]{
+    margin-bottom: .2em;
+    width: 16em;
+    height:2.3em;
+    border:none;
+    border-bottom: 2px solid #595959;
+    background: rgba(106,106,106,0.5);
+}
+input[type="password"]:focus{
+	outline: none;
+	border-bottom: 2px solid #8389e0;
+}
+/*提交重置表单美化*/
+.sub{
+	position: absolute;
+	/*border: 1px solid black;*/
+	padding: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	left:0;
+	bottom: 0;
+	width: 100%;
+	height:3.4rem;
+}
+
+.submitclass{
+	position: relative;
+	width:30%;
+	padding: 0;
+	margin: 0;
+	height:100%;
+	left: 20%;
+}
+.resetclass{
+	position: absolute;
+	width: 30%;
+	height:100%;
+	padding: 0;
+	margin: 0;
+	right:25%;
+	top: 0;
+}
+
+input[type="submit"]{
+	width:50%;
+	height:50%;
+	position: absolute;
+	left: 25%;
+	top:25%;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	background: #66ccff;
+}
+input[type="submit"]:hover {
+	background: #98e0ad;  
+	outline: 0;
+}
+input[type="reset"]{
+	width:50%;
+	height:50%;
+	position: absolute;
+	left: 25%;
+	top:25%;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	background: #66ccff;
+}
+input[type="reset"]:hover {
+	background: #98e0ad;  
+	outline: 0;
+}
+
+
+/*响应式补充*/
+@media screen and (max-width: 960px){
+  
+}
+
+@media screen and (max-width: 810px){
+ 
+}
+
+@media screen and (max-width: 550px){
+	.sign{
+		width:80%;
+		height:12rem;
+	}
+	form{
+		width:94%;
+		height:26rem;	
+		margin-top: 12rem;
+	}
+	form div{
+	margin-top: 0.5em;
+	margin-left:.5em;
+	}
+	label{
+	color: white;
+	font-size: 1rem;
+	text-shadow: 1px 1px 1px black;
+	}
+	input[type="radio"] + label{
+	font-size: 1.1em;
+	color:#F2F2F2;
+	margin-left:2em;
+	}
+	input[type="text"]{
+    margin-bottom: .2em;
+    /*margin-left: 10%;*/
+    width: 60%;
+    height:2em;
+    border:none;
+    border-bottom: 2px solid #595959;
+    background: rgba(106,106,106,0.5);
+	}
+	input[type="password"]{
+    margin-bottom: .2em;
+    margin-left: 1em;
+    width: 60%;
+    height:1.3em;
+    border:none;
+    border-bottom: 2px solid #595959;
+    background: rgba(106,106,106,0.5);
+}
+.input-error{
+	display: block;
+	/*margin: 0 auto;*/
+	margin-left: 0;
+	width: 100%;
+	font-size: 13px;
+	color:#cd1017;
+	padding-top:.1rem;
+	padding-left: 2.4rem;
+	text-align: center;
+	text-shadow: 1px 1px 1px black;
+	
+	}
+.select-error{
+	font-size: 13px;
+	color:#cd1017;
+	padding-left: 1rem;
+	text-shadow: 1px 1px 1px black;
+}
+}
+
+@media screen and (max-width: 320px){
+	.sign{
+		width:80%;
+		height:12rem;
+	}
+	form{
+		margin-top: 12rem;
+		width:96%;
+		height:25rem;	
+	}
+	form div{
+	margin-top: 0.5em;
+	margin-left:.5em;
+	}
+	label{
+	color: white;
+	font-size: 1rem;
+	text-shadow: 1px 1px 1px black;
+	}
+	input[type="radio"] + label{
+	font-size: 1.1em;
+	color:#F2F2F2;
+	margin-left:1em;
+	}
+	input[type="text"]{
+    margin-bottom: .2em;
+    /*margin-left: 1em;*/
+   /*margin-left: 1.5em;*/
+    width: 60%;
+    height:1.3em;
+    border:none;
+    border-bottom: 2px solid #595959;
+    background: rgba(106,106,106,0.5);
+	}
+	input[type="password"]{
+    margin-bottom: .2em;
+    margin-left: 1em;
+    width: 60%;
+    height:1.3em;
+    border:none;
+    border-bottom: 2px solid #595959;
+    background: rgba(106,106,106,0.5);
+}
+.input-error{
+	display: block;
+	/*margin: 0 auto;*/
+	margin-left: 0;
+	width: 100%;
+	font-size: 13px;
+	color:#cd1017;
+	padding-top:.1rem;
+	padding-left: 2.4rem;
+	text-align: center;
+	text-shadow: 1px 1px 1px black;
+	}
+.select-error{
+	display: block;
+	margin-left: 0;
+	width: 100%;
+	height: 1rem;
+	font-size: 13px;
+	color:#cd1017;
+	text-align: center;
+	/*padding-left: 1rem;*/
+	text-shadow: 1px 1px 1px black;
+}
+}

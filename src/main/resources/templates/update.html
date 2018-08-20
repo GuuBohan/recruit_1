@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+	<!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- 设置苹果工具栏颜色:默认值为 default，可以定为 black和 black-translucent-->
+	<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+	<meta name="format-detection" content="telphone=no, email=no"/>
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+	<title>信息修改</title>
+	<link rel="stylesheet" type="text/css" href="../public/css/updateInfo.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<form action="#" method="post" id="user-login">
+				<div class="studentIDclass">
+					<label for="studentID">学号:</label>
+					<input type="text" name="studentID" id="studentID" placeholder="学号首字母大写" autocomplete="off" required="required"/>
+					<br /><span class="input-error spa1"></span>
+				</div>
+				<div class="resetPasswordclass">
+					<label for="password">密码:</label>
+					<input type="password" id="password"   name="password" placeholder="请填写备用密码" required="required" />
+					<br /><span class="input-error spa4"></span>
+			</div>
+				<div class="submitclass">
+					<input type="submit" name="submit" id="submit" value="提交" />
+				</div>
+			</form>
+		</div>
+	</body>
+	<script src="../public/js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../public/js/Kvalidate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../public/js/updateInfo.js" type="text/javascript" charset="utf-8"></script>
+</html>

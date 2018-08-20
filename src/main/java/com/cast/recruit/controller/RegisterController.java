@@ -31,7 +31,7 @@ public class RegisterController {
             return "register";
         }
         else {
-            if (userService.userNotnull(user.getStudentID(),user.getPhoneNumber()))        //判断是否重复注册
+            if (userService.userNotnull(user.getStudentID()))        //判断是否重复注册
                 return "You shouldn't register repeatedly.";
             else{
                 userService.register(user);

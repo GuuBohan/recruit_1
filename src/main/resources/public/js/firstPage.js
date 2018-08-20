@@ -51,39 +51,7 @@ Round_item.prototype.move = function(){
 			animate();
 		}
 init();
-/*表单通信部分*/
+
+		
 
 
-// function submitData(){
-// var xhr = new XMLHttpRequest();
-// xhr.onreadystatechange = function(){
-// 	if(xhr.readyState == 4){
-// 		if((xhr.status >= 200 && xhr.status <300) || xhr.status == 304){
-// 			alert(xhr.responseText);
-// 		}else{
-// 			alert("请求失败：" + xhr.status) ;
-// 		}
-// 	}
-// };
-// xhr.open("post","../Recruit/src/main/java/com/cast/recruit/controller/RegisterController.java",true);
-// xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-// var form = document.getElementById("user-apply");
-// xhr.send(serialize(form));
-
-// }
-var data ={};
-data = $('#user-apply').serialize();
-$.ajax({
-	type: 'POST',
-	url:'localhost:8080/register',
-	data: JSON.stringify(data),
-	contentType: 'application/json; charset=UTF-8',
-	dataType: 'json',
-	success: function(data){
-		alert("提交成功！");
-	},
-	error: function(xhr,type){
-		alert("提交失败！");
-	}
-
-});

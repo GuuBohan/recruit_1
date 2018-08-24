@@ -4,10 +4,14 @@ import com.cast.recruit.model.User;
 import com.cast.recruit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 
 /**
  * Created By GuuBohan.
@@ -21,9 +25,12 @@ public class UpdateInfoController {
     @Autowired
     public UpdateInfoController(UserService userService){this.userService = userService;}
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String updateInfo(){
-        return "updateInfo";
+    @ResponseBody
+    @RequestMapping(value = "/B17011429",method = RequestMethod.GET)
+    public User updateInfo(String studentID, HttpServletRequest request){
+        studentID = (String) request.getSession().getAttribute("student_session");
+        System.out.println(studentID);
+        return userService.findUserByID(studentID);
     }
 
 //    @RequestMapping(method = RequestMethod.POST)

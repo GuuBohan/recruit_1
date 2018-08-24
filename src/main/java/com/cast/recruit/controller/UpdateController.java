@@ -40,7 +40,7 @@ public class UpdateController {
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST)    //200==成功  406==用户不存在  407==密码错误
     public Integer updateUser(HttpSession session, @RequestBody String data){
-//        System.out.println("data: "+data);
+
         Integer result = 200;
 
         JSONObject jsonObject = JSONObject.parseObject(data);
@@ -51,19 +51,20 @@ public class UpdateController {
 //        System.out.println(password);
 
             if (userService.userNotnull(studentID) && userService.equalsToPwd(studentID,password)){         //&&具有逻辑短路
-                session.setAttribute("session_student", userService.findUserByID(studentID));
+                //session中存入studentID
+                session.setAttribute("session_student", studentID);
+//                String ID = (String) session.getAttribute("session_student");
+//                System.out.println(ID);
+                session.setMaxInactiveInterval(600);
                 return result;
-//                return userService.findUserByID(studentID);
             }
             else if (userService.userNotnull(studentID) == false){
                 result = 406;
                 return result;
-//                return null;
             }
             else {
                 result = 407;
                 return result;
-//                return null;
             }
     }
 //    @RequestMapping(method = RequestMethod.POST)

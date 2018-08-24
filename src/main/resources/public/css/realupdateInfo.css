@@ -1,15 +1,16 @@
 *{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body,html{
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 body{
-	background: url(../images/bg.png) repeat;
+    background: url(../images/bg.png) repeat;
 }
+
 
 .container{
 	position: relative;
@@ -18,6 +19,7 @@ body{
 	height: 100%;
 	/*border: 2px solid white;*/
 }
+
 
 .sign{
 	display: block;
@@ -28,7 +30,6 @@ body{
 	left: 50%;
 	transform: translateX(-50%);
 }
-
 
 #logo{
 	width: 100%;
@@ -138,18 +139,18 @@ img{
 	right:5px;
 	margin:5px;
 }
-input[type="password"]{
+/* input[type="password"]{
     margin-bottom: .2em;
     width: 16em;
     height:2.3em;
     border:none;
     border-bottom: 2px solid #595959;
     background: rgba(106,106,106,0.5);
-}
-input[type="password"]:focus{
+} */
+/* input[type="password"]:focus{
 	outline: none;
 	border-bottom: 2px solid #8389e0;
-}
+} */
 /*提交重置表单美化*/
 .sub{
 	position: absolute;
@@ -181,7 +182,7 @@ input[type="password"]:focus{
 	top: 0;
 }
 
-input[type="submit"]{
+input[type="button"]{
 	width:50%;
 	height:50%;
 	position: absolute;
@@ -194,7 +195,7 @@ input[type="submit"]{
 	border-radius: 10px;
 	background: #66ccff;
 }
-input[type="submit"]:hover {
+input[type="button"]:hover {
 	background: #98e0ad;  
 	outline: 0;
 }
@@ -259,7 +260,7 @@ input[type="reset"]:hover {
     border-bottom: 2px solid #595959;
     background: rgba(106,106,106,0.5);
 	}
-	input[type="password"]{
+	/* input[type="password"]{
     margin-bottom: .2em;
     margin-left: 1em;
     width: 60%;
@@ -267,7 +268,7 @@ input[type="reset"]:hover {
     border:none;
     border-bottom: 2px solid #595959;
     background: rgba(106,106,106,0.5);
-}
+} */
 .input-error{
 	display: block;
 	/*margin: 0 auto;*/
@@ -323,7 +324,7 @@ input[type="reset"]:hover {
     border-bottom: 2px solid #595959;
     background: rgba(106,106,106,0.5);
 	}
-	input[type="password"]{
+	/* input[type="password"]{
     margin-bottom: .2em;
     margin-left: 1em;
     width: 60%;
@@ -331,7 +332,7 @@ input[type="reset"]:hover {
     border:none;
     border-bottom: 2px solid #595959;
     background: rgba(106,106,106,0.5);
-}
+} */
 .input-error{
 	display: block;
 	/*margin: 0 auto;*/

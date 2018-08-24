@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created By GuuBohan.
  * On 2018/8/19
  */
-@Controller
-@RequestMapping("/update")
-public class UpdateeController {
-
-    @RequestMapping(method = RequestMethod.GET)
-    public String update(){
-        return "update";
-    }
-}
+//@Controller
+//@RequestMapping("/update")
+//public class UpdateeController {
+//
+//    @RequestMapping(method = RequestMethod.GET)
+//    public String update(){
+//        return "update";
+//    }
+//}

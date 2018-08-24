@@ -16,44 +16,39 @@ $("#password").blur(function(){
 	eyeOfGod.src = "../public/images/visible.png";
 })
 
-/*表单通信部分*/
-//$("#submit").submit(function(){
-//	$("#submit").preventDefault();
-//	if(resetPassword.type == "text"){
-//		resetPassword.type = "password";
-//		eyeOfGod.src ="../public/images/visible.png";
-//		alert("修改成功!");
-//	}
-////	var data ={};
-////	data = $('#user-apply').serialize();
-////	$.ajax({
-////	type: 'POST',
-////	url:'localhost:8080/register',
-////	data: JSON.stringify(data),
-////	contentType: 'application/json; charset=UTF-8',
-////	dataType: 'json',
-////	success: function(data){
-////		alert("提交成功！");
-////	},
-////	error: function(xhr,type){
-//////		alert("提交失败！");
-////	}
-////});	
-//	
-//})
-var date = {};
-date = $("#user-apply").serialize();
-$.ajax({
-	type: 'POST',
-	url: 'localhost:8080/register',
-	data: JSON.stringify(data),
-	contentType: 'application/json; charset=UTF-8',
-	dataType: 'json',
-	stat
-	success: function(data){
-		window.location.href = "success.html";
-	},
-	error: function(xhr,type){
-		window.location.href = "success.html";
-	}
-});
+
+// var dateserial = {};
+// dateserial = $("#user-apply").serialize();
+// $.ajax({
+// 	type: 'POST',
+// 	url: 'localhost:8080/register',
+// 	data: JSON.stringify(data1),
+// 	contentType: 'application/json; charset=UTF-8',
+// 	dataType: 'json',
+// 	success: function(data){
+// 		console.log(data1);
+// 	},
+// 	error: function(xhr,type){
+		
+// 	}
+// });
+var dateserial ={};
+	dataserial = $('form').serialize();
+	var dataJson = JSON.stringify(dataserial);
+	// console.log(dateserial);
+	// console.log(dateJson);
+	$.ajax({
+		type: 'POST',
+		url: 'localhost:8080/register',
+		data: dataJson,
+		contentType: 'application/json;charset=UTF-8',
+		dateType: 'json',
+		success: function(data){
+			// alert("提交成功!");
+			// alert(dataJson);
+		},
+		error: function(xhr,type){	
+			// alert("提交失败!"+dataJson);
+			// alert(dataJson);
+		}
+	});

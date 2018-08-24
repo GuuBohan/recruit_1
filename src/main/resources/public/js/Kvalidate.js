@@ -38,7 +38,7 @@ $("input").blur(function(){
 		}
 	}
 	if($(this).is("#phoneNumber")){
-				var patternNumber = /^1[3|5|7|8|][0-9]{9}$/;
+				var patternNumber = /^1[3|5|6|7|8|][0-9]{9}$/;
 				if($("#phoneNumber").val()!= ""){
 					if(!patternNumber.test($("#phoneNumber").val())){
 						$(".spa3").text("号码格式有误!");

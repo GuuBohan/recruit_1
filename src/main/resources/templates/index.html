@@ -25,15 +25,16 @@
 	<meta name="keywords" content="CAST,cast,Cast招新,招新页面" author="Kapechen,Mr.Gu">
 	<title>CAST招新</title>
 	<!--<link rel="stylesheet" href="../public/css/swiper-3.4.2.min.css">-->
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css"> 
-	<link rel="stylesheet" type="text/css" href="../public/css/animate.min.css"/>
-	<link rel="stylesheet" type="text/css" href="../public/css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link href='http://cdn.webfont.youziku.com/webfonts/nomal/121353/45803/5b5c363cf629d90d1c1060ad.css' rel='stylesheet' type='text/css' />
-	<link href='http://cdn.webfont.youziku.com/webfonts/nomal/121353/45803/5b5c3788f629d90d1c1060ae.css' rel='stylesheet' type='text/css' />
-	<link href='http://cdn.webfont.youziku.com/webfonts/nomal/121353/45803/5b5c384cf629d90d1c1060af.css' rel='stylesheet' type='text/css' />
-	<link href='http://cdn.webfont.youziku.com/webfonts/nomal/121353/45803/5b5c388bf629d90d1c1060b0.css' rel='stylesheet' type='text/css' />
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css" /> 
+	<link rel="stylesheet" type="text/css" href="../public/css/animate.min.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+	<script type="text/javascript">
+   	$youziku.load(".ziti", "cae7c563cb2444189bf3f7a27aa58d69", "LiDeBiao-Xing3");
+   	$youziku.draw();
+	</script>
 </head>
 <body>
 	<div class="swiper-container">
@@ -44,21 +45,21 @@
 				<!-- 粒子效果 -->
 				<canvas id="canvas"></canvas>
 				<!-- 粒子效果结束 -->
-				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.5s" style="font-family:'LiDeBiao-Xing313855d237b1da09';">终于等到你！</p>
-				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1.3s" style="font-family:'LiDeBiao-Xing313856235d21da09';">莫忘来时路，莫负少年途</p>
-				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="2.1s" style="font-family:'LiDeBiao-Xing313856530e21da09';">愿你能加入科协</p>
-				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="2.9s" style="font-family:'LiDeBiao-Xing313856627f41da09';">活出更精彩的自己!</p>
-				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="3.7s">左翻进入下一页</p>
+				<p class="ani ziti" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="0.5s">终于等到你！</p>
+				<p class="ani ziti" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1.3s">莫忘来时路，莫负少年途</p>
+				<p class="ani ziti" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="2.1s">愿你能加入科协</p>
+				<p class="ani ziti" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="2.9s">活出更精彩的自己!</p>
+				<p class="ani ziti" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="3.7s">左翻进入下一页</p>
 
 			</div>
 			<!-- 第二页制作 -->
 			<div class="swiper-slide second-slide">
 				<div class="sign">		
-					<img src="../public/images/logo.png" id="logo">
+					<img src="images/logo.png" id="logo">
 				</div>
 				<div class="link">
-					<p class="alinkone"><a href="register.html">科协在线报名</a></p>
-					<p class="alinktwo"><a href="update.html">报名信息修改</a></p>
+					<p class="alinkone"><a href="register">科协在线报名</a></p>
+					<p class="alinktwo"><a href="update">报名信息修改</a></p>
 				</div>
 			</div>
 		</div>
@@ -71,7 +72,6 @@
 	<!--<script src="../public/js/jquery-2.1.3.min.js"></script>-->
 	<script src="../public/js/firstPage.js"></script>
 	<script src="js/firstPage.js"></script>
-	<!--<script src="../public/js/swiper-3.4.2.min.js"></script>-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 	<script src="../public/js/swiper.animate1.0.3.min.js"></script> 
 	<script src="js/swiper.animate1.0.3.min.js"></script>
@@ -88,7 +88,7 @@
             slideShadows : true,
             limitRotation : true,
         },
-        setWrapperSize :true,
+        setWrapperSize : true,
 		onInit: function(swiper){
 		      swiperAnimateCache(swiper);
 		      swiperAnimate(swiper);

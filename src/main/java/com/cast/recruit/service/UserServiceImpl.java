@@ -24,15 +24,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(User user) {
-//        User oldUser = userRepository.findUserByStudentID(user.getStudentID());
-        return userRepository.save(user);
+    public void update(String studentID, String studentName, Long phoneNumber, String intention_1, String intention_2) {
+//        User user1 = new User(studentID,studentName,phoneNumber,intention_1,intention_2);
+        User user = userRepository.findUserByStudentID(studentID);
+        user.setStudentName(studentName);
+        user.setPhoneNumber(phoneNumber);
+        user.setIntention_1(intention_1);
+        user.setIntention_2(intention_2);
+        userRepository.save(user);
     }
-
-//    @Override
-//    public List<User> userList() {
-//        return userRepository.findAll();
-//    }
 
     @Override        //true则为不空，false则为空
     public Boolean userNotnull(String studentID){
@@ -50,4 +50,9 @@ public class UserServiceImpl implements UserService {
     public User findUserByID(String studentID) {
         return userRepository.findUserByStudentID(studentID);
     }
+
+//    @Override
+//    public String findUserByiD(String studentID) {
+//        return userRepository.findUserByStudentiD(studentID);
+//    }
 }

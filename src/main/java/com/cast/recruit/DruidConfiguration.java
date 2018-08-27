@@ -1,11 +1,18 @@
 package com.cast.recruit;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
+import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DatabaseDriver;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.sql.SQLException;
 
 /**
  * Created By GuuBohan.
@@ -25,8 +32,8 @@ public class DruidConfiguration {
         //设置ip黑名单，如果allow与deny共同存在时,deny优先于allow
         servletRegistrationBean.addInitParameter("deny","192.168.0.19");
         //设置控制台管理用户
-        servletRegistrationBean.addInitParameter("loginUsername","guubohan");
-        servletRegistrationBean.addInitParameter("loginPassword","134615");
+        servletRegistrationBean.addInitParameter("loginUsername","cast");
+        servletRegistrationBean.addInitParameter("loginPassword","castlonglive");
         //是否可以重置数据
         servletRegistrationBean.addInitParameter("resetEnable","false");
         return servletRegistrationBean;
@@ -41,5 +48,29 @@ public class DruidConfiguration {
         //忽略过滤的形式
         filterRegistrationBean.addInitParameter("exclusions","*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
         return filterRegistrationBean;
+    }
+
+    @Bean
+//    @ConfigurationProperties("spring.datasource.*")
+    public DruidDataSource dataSource(DataSourceProperties properties){
+        DruidDataSource dataSource = new DruidDataSource();
+        dataSource.setDriverClassName(properties.determineDriverClassName());
+        dataSource.setUrl(properties.determineUrl());
+        dataSource.setUsername(properties.determineUsername());
+        dataSource.setPassword(properties.determinePassword());
+        DatabaseDriver databaseDriver = DatabaseDriver.fromJdbcUrl(properties.determineUrl());
+
+        String validationQuery = databaseDriver.getValidationQuery();
+        if (validationQuery != null) {
+            dataSource.setTestOnBorrow(true);
+            dataSource.setValidationQuery(validationQuery);
+        }
+        try {
+            //开启druid监控功能
+            dataSource.setFilters("mergeStat,wall");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return dataSource;
     }
 }

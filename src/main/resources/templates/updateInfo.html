@@ -23,13 +23,13 @@
 <!-- QQ应用模式 -->
 <meta name="x5-page-mode" content="app">
 <title>信息修改页面</title>
-<link rel="stylesheet" href="../public/css/realupdateInfo.css">
-<link rel="stylesheet" href="css/realupdateInfo.css">
+<link rel="stylesheet" href="../public/css/realupdateInfo.css" />
+<link rel="stylesheet" href="css/realupdateInfo.css" />
 </head>
 <body>
     <div class="container">
         <div class="sign">		
-                <img src="../public/images/logo.png" id="logo" />
+                <img src="images/logo.png" id="logo" />
         </div>
             <form action="#" method="post" id="user-apply">
             <div class="studentIDclass">
@@ -41,13 +41,6 @@
                 <label for="studentName">姓名:</label>
                 <input type="text" name="studentName" id="studentName" placeholder="敢问阁下尊姓大名?" autocomplete="off" required="required"/>
                 <span class="input-error spa2"></span>
-            </div>
-            <div class="studentSexclass">
-                <label for="studentSex">性别:</label>
-                <input type="radio" checked="checked" id="男" name="studentSex" value="男"/>
-                <label for="男">小哥哥</label>
-                <input type="radio" id="女" name="studentSex" value="女"/>
-                <label for="女">小姐姐</label>
             </div>
             <div class="phoneNumberclass">
                 <label for="phoneNumber">手机号码:</label>
@@ -77,16 +70,8 @@
                 </select>
                 <span class="select-error spa6"></span>
             </div>
-            
-            <div class="sub">
-                <div class="submitclass">
-                    <input type="button" name="submit" id="submit" value="提交" />
-                </div>
-                <div class="resetclass">
-                    <input type="reset" name="reset" value="重置" />
-                </div>
-            </div>
             </form>
+            <div class="submitclass" id="submit" onclick="submit()">提交</div>
         </div>
         <script src="../public/js/jquery-2.1.3.min.js"></script>
         <script src="../public/js/Kvalidate.js"></script>
@@ -94,6 +79,5 @@
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/Kvalidate.js"></script>
         <script src="js/realupdateInfo.js"></script>
-
 </body>
 </html>

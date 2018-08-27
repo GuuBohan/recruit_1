@@ -1,17 +1,11 @@
 package com.cast.recruit.controller;
 
-import com.cast.recruit.model.User;
+import com.alibaba.fastjson.JSONObject;
 import com.cast.recruit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 
 /**
  * Created By GuuBohan.
@@ -25,20 +19,50 @@ public class UpdateInfoController {
     @Autowired
     public UpdateInfoController(UserService userService){this.userService = userService;}
 
+    @RequestMapping(method = RequestMethod.GET)
+    public String updateInfo(){
+        return "updateInfo";
+    }
+
     @ResponseBody
-    @RequestMapping(value = "/B17011429",method = RequestMethod.GET)
-    public User updateInfo(String studentID, HttpServletRequest request){
-        studentID = (String) request.getSession().getAttribute("student_session");
-        System.out.println(studentID);
-        return userService.findUserByID(studentID);
-    }
-
-//    @RequestMapping(method = RequestMethod.POST)
     @RequestMapping(method = RequestMethod.POST)
-    public String updateInfo(User user){
-        userService.updateUser(user);
-        return "success";
+    public Integer update(@RequestBody String data, HttpServletRequest request){
+
+        Integer result = 200;
+
+        JSONObject jsonObject = JSONObject.parseObject(data);
+        String studentID = jsonObject.getString("studentID");
+        String studentName = jsonObject.getString("studentName");
+        Long phoneNumber = jsonObject.getLong("phoneNumber");
+        String intention_1 = jsonObject.getString("intention_1");
+        String intention_2 = jsonObject.getString("intention_2");
+
+        String trueID = (String)request.getSession().getAttribute("session_student");
+
+        System.out.println(trueID);
+        System.out.println(data);
+        System.out.println(studentID);
+
+        if (studentID.equals(trueID)){
+            userService.update(studentID, studentName, phoneNumber, intention_1, intention_2);
+            return result;
+        }
+        else{
+            result = 408;
+            return result;
+        }
     }
 
+//    @ResponseBody
+//    @RequestMapping(method = RequestMethod.GET)
+//    public User updateInfo(HttpServletRequest request){
+//        String studentID = (String) request.getSession().getAttribute("session_student");
+//        System.out.println(studentID);
+
+//        JSONObject jsonObject = new JSONObject();
+//        response.getWriter().write(jsonObject.getString(userService.findUserByiD(studentID)));
+
+//        return userService.findUserByID(studentID);
+//    }
 
 }

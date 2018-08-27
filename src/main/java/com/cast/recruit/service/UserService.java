@@ -10,7 +10,7 @@ import com.cast.recruit.model.User;
 public interface UserService {
     User register(User user);
 
-    User updateUser(User user);
+    void update(String studentID, String studentName, Long phoneNumber, String intention_1, String intention_2);
 
 //    List<User> userList();
 
@@ -19,4 +19,6 @@ public interface UserService {
     Boolean equalsToPwd(String studentID, String pwd);
 
     User findUserByID(String studentID);
+
+//    String findUserByiD(String studentID);
 }

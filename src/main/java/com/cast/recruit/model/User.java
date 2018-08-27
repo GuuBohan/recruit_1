@@ -49,6 +49,14 @@ public class User {
         this.password = password;
     }
 
+    public User(String studentID, String studentName, Long phoneNumber, String intention_1, String intention_2){
+        this.studentID = studentID;
+        this.studentName = studentName;
+        this.phoneNumber =phoneNumber;
+        this.intention_1 = intention_1;
+        this.intention_2 = intention_2;
+    }
+
 
     public String getPassword() {
         return password;

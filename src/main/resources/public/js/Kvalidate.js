@@ -52,10 +52,18 @@ $("input").blur(function(){
 					return false;
 				}
 	}
-	if($(this).is("#resetPassword")){
-		if($("#resetPassword").val()!= ""){
-			$(".spa4").text("");
-			return true;
+	if($(this).is("#password")){
+		var patternPassword = /^[a-zA-Z\d_]{8,}$/;
+		if($("#password").val()!= ""){
+			// $(".spa4").text("");
+			// return true;
+			if(!patternPassword.test($("#password").val())){
+				$(".spa4").text("密码长度不得小于6位!");
+				return false;
+			}else{
+				$(".spa4").text("");
+				return true;
+			}
 		}else{
 			$(".spa4").text("请勿为空!");
 			return false;

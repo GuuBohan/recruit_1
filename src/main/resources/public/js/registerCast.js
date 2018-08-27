@@ -16,39 +16,22 @@ $("#password").blur(function(){
 	eyeOfGod.src = "../public/images/visible.png";
 })
 
-
-// var dateserial = {};
-// dateserial = $("#user-apply").serialize();
-// $.ajax({
-// 	type: 'POST',
-// 	url: 'localhost:8080/register',
-// 	data: JSON.stringify(data1),
-// 	contentType: 'application/json; charset=UTF-8',
-// 	dataType: 'json',
-// 	success: function(data){
-// 		console.log(data1);
-// 	},
-// 	error: function(xhr,type){
-		
-// 	}
-// });
-var dateserial ={};
+//AJAX通信部分
+$(function(){
+	var dateserial ={};
 	dataserial = $('form').serialize();
-	var dataJson = JSON.stringify(dataserial);
-	// console.log(dateserial);
-	// console.log(dateJson);
-	$.ajax({
-		type: 'POST',
-		url: 'localhost:8080/register',
-		data: dataJson,
-		contentType: 'application/json;charset=UTF-8',
-		dateType: 'json',
-		success: function(data){
-			// alert("提交成功!");
-			// alert(dataJson);
-		},
-		error: function(xhr,type){	
-			// alert("提交失败!"+dataJson);
-			// alert(dataJson);
-		}
-	});
+		var dataJson = JSON.stringify(dataserial);
+		$.ajax({
+			type: 'POST',
+			url: 'http://localhost:8080/register',
+			data: dataJson,
+			contentType: 'application/json;charset=UTF-8',
+			dateType: 'json',
+			success: function(data){
+			},
+			error: function(XHTTPRequest,state){
+				// alert("这是我自己写的弹窗!");
+				console.log("这是彩蛋哦!");
+			}
+		});
+})

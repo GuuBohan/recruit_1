@@ -2,6 +2,7 @@ package com.cast.recruit.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created By GuuBohan.
@@ -10,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/success")
 public class SuccessController {
+
+    @RequestMapping(method = RequestMethod.GET)
     public String success(){
         return "success";
     }
+
 }

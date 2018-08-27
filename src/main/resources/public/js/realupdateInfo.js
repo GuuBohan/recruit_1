@@ -1,30 +1,32 @@
-$(function(){
-	var submit = document.getElementById("submit");
-	submit.onclick = function(event){
-		dataserial = $('form').serialize();
-		var dataJson = JSON.stringify(dataserial);
-		$.ajax({
-			type: 'POST',
-			url: 'localhost:8080/register',
-			data: dataJson,
-			contentType: 'application/json;charset=UTF-8',
-			dateType: 'json',
-			success: function(data,state){
-				// alert("提交成功!");
-				// alert(dataJson);
-				if(state == 200){
-					alert("提交成功!");
+
+function submit(){
+		if($("#studentID").val()==""||$("#password").val()==""){
+			alert("请勿为空!");
+			return false;
+		}else{
+			// dataserial = $('form').serialize();
+			// var dataJson = JSON.stringify(dataserial);
+			var result =JSON.stringify({"studentID":$("#studentID").val(),"studentName":$("#studentName").val(),"phoneNumber":$("#phoneNumber").val(),"intention_1":$("#intention_1").val(),"intention_2":$("#intention_2").val()});
+			$.ajax({
+				type: 'POST',
+				url: 'http://localhost:8080/updateInfo',
+				data: result,
+				contentType: 'application/json;charset=UTF-8',
+				dateType: 'json',
+				success: function(data,state){
+						if(data == 408){
+							$(".spa1").text("学号不可更改!");
+						}else if(data == 200){
+							window.location.href = "success";
+						}
+				},
+				error: function(XHTTPRequest,state){
+					
+					// alert(result);
+					console.log("%c达成成就 纪念彩蛋"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
+					console.log("学长在线撩妹+V辛 wxkpc123");
 				}
 				
-			},
-			error: function(xhr,type){	
-				//window.location.href = "updateInfo.html";
-				alert("提交失败!"+type);
-				
-			}
-		});
-		return false;
-	};
-
-	
-}) 
+			});
+		}
+	}	

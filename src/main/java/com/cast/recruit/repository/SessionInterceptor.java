@@ -21,7 +21,7 @@ public class SessionInterceptor implements HandlerInterceptor {
         //验证session是否存在
         Object o = request.getSession().getAttribute("session_student");
         if (o == null){
-            response.sendRedirect("../update");
+            response.sendRedirect("/update");
             return false;
         }
         return true;
